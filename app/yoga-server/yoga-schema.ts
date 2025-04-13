@@ -1,16 +1,16 @@
-import { createSchema, createYoga } from "graphql-yoga";
+import { createSchema } from "graphql-yoga";
 
-export const yoga = createYoga({
-  schema: createSchema({
-    typeDefs: /* GraphQL */ `
+export const schema = createSchema({
+  typeDefs: /* GraphQL */ `
       type Query {
         hello: String!
+        goodbye: String!
       }
     `,
-    resolvers: {
-      Query: {
-        hello: () => "Hello Deno!",
-      },
+  resolvers: {
+    Query: {
+      hello: () => "Hello Deno!",
+      goodbye: () => "Goodbye Deno!",
     },
-  }),
+  },
 });

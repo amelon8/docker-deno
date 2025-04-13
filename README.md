@@ -37,7 +37,10 @@ typescript 5.7.3
 
 ```
 # cd /usr/src/app/yoga-server
+
 # deno task start
+Task start deno run --allow-net --allow-env main.ts
+Listening on http://0.0.0.0:8009//graphql
 ```
 
 - To stop the container.
