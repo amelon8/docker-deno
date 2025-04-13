@@ -1,0 +1,24 @@
+services:
+
+  deno:
+    image: amelon/deno:1
+    container_name: deno-01
+    restart: always
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8009:8009
+#    environment:
+#      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    volumes:
+      - ${PWD}/app:/usr/src/app
+      - ${PWD}/bin:/usr/src/bin
+    working_dir: /usr/src/app
+    entrypoint:
+      # - /usr/src/bin/entrypoint_loop.sh
+      - /bin/deno
+      - repl
+
+
